@@ -3,8 +3,11 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 9000
 
+//Import router
+const loginController = require("./login/loginController")
+
 //Conection DB
-const db = require('./database/db') // Conexão com o Knex
+const db = require('./database/db')
 
 //Data conection
 db.raw('SELECT 1')
@@ -13,6 +16,9 @@ db.raw('SELECT 1')
     }).catch((err) =>{
         console.log(err)
     })
+
+//Use router
+app.use("/", loginController)
 
 //View Engine
 app.set('view engine', 'ejs')
@@ -27,7 +33,6 @@ app.use(bodyParser.json())
 app.get("/", (req, res) => {
     res.render("index")
 })
-
 
 
 app.listen(PORT, () => {
