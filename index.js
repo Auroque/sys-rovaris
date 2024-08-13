@@ -6,6 +6,14 @@ const PORT = process.env.PORT || 9000;
 //Conection DB
 const db = require('./database/db'); // Conexão com o Knex
 
+//Data conection
+db.raw('SELECT 1')
+    .then(()=>{
+        console.log("Conectado ao banco")
+    }).catch((err) =>{
+        console.log(err)
+    })
+
 //View Engine
 app.set('view engine', 'ejs')
 
@@ -13,7 +21,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 //Body Parser
-app.use(bodyParser.urlencoded({extends: false}))
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 app.get("/", (req, res) => {
