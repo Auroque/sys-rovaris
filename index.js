@@ -1,11 +1,26 @@
+const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 9000;
 
+//Conection DB
+const db = require('./database/db'); // Conexão com o Knex
+
+//View Engine
+app.set('view engine', 'ejs')
+
+//Statics
+app.use(express.static('public'))
+
+//Body Parser
+app.use(bodyParser.urlencoded({extends: false}))
+app.use(bodyParser.json())
 
 app.get("/", (req, res) => {
-    res.send("Rodando Servidor");
+    res.render("index")
 })
+
+
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
