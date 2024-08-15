@@ -4,7 +4,6 @@ const app = express()
 const PORT = process.env.PORT || 9000
 
 //Import router
-const loginController = require("./login/loginController")
 
 //Conection DB
 const db = require('./database/db')
@@ -18,7 +17,6 @@ db.raw('SELECT 1')
     })
 
 //Use router
-app.use("/", loginController) 
 
 //View Engine
 app.set('view engine', 'ejs')
