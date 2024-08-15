@@ -18,7 +18,7 @@ db.raw('SELECT 1')
     })
 
 //Use router
-app.use("/", loginController) //Teste
+app.use("/", loginController) 
 
 //View Engine
 app.set('view engine', 'ejs')
