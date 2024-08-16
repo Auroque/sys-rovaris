@@ -26,7 +26,11 @@ module.exports = {
       database: 'nome_do_banco'
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'knex_migrations',
+      directory: `${__dirname}/database/migrations`
+    },
+    seeds: {
+      directory: `${__dirname}/database/migrations`
     }
   }
 };

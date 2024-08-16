@@ -4,19 +4,8 @@ const app = express()
 const PORT = process.env.PORT || 9000
 
 //Import router
-
-//Conection DB
-const db = require('./database/db')
-
-//Data conection
-db.raw('SELECT 1')
-    .then(()=>{
-        console.log("Conectado ao banco")
-    }).catch((err) =>{
-        console.log(err)
-    })
-
-//Use router
+const routes = require('./routes')
+app.use(routes)
 
 //View Engine
 app.set('view engine', 'ejs')
