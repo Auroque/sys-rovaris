@@ -14,7 +14,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 //Body Parser
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get("/", (req, res) => {
