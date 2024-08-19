@@ -17,6 +17,4 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`)
-});
+app.listen(PORT, () => { console.log(`Servidor rodando na porta ${PORT}`) })
