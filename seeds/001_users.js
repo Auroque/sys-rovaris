@@ -7,6 +7,7 @@ exports.seed = async function (knex) {
   await knex('users').del()
   await knex('users').insert([
     { username: 'Luiz Augusto' },
-    { username: 'Isabella Veloso' }
+    { username: 'Isabella Veloso' },
+    { username: 'Klisman' }
   ]);
 };
